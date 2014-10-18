@@ -11,17 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Main.cpp" />
-    <ClCompile Include="Sources\System.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Headers\System.h" />
-  </ItemGroup>
-  <ItemGroup>
     <FxCompile Include="Ressources\PixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Cylinder.h" />
+    <ClInclude Include="Headers\Light.h" />
+    <ClInclude Include="Headers\Object.h" />
+    <ClInclude Include="Headers\Plane.h" />
+    <ClInclude Include="Headers\Sphere.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2E915B42-7955-4E4F-B651-D476801D88F1}</ProjectGuid>
@@ -32,7 +32,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>

@@ -1,0 +1,81 @@
+<Object>
+  <Type>Sphere</Type>
+  <Origin>
+    <X>100</X>
+    <Y>100</Y>
+    <Z>100</Z>
+  </Origin>
+  <Color>
+    <R>255</R>
+    <G>255</G>
+    <B>255</B>
+  </Color>
+  <Radius>100</Radius>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<Object>
+  <Type>Plan</Type>
+  <Origin>
+    <X>100</X>
+    <Y>100</Y>
+    <Z>100</Z>
+  </Origin>
+  <Color>
+    <R>255</R>
+    <G>255</G>
+    <B>255</B>
+  </Color>
+  <Direction>
+    <X>1</X>
+    <Y>0</Y>
+    <Z>0</Z>
+  </Direction>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<Object>
+  <Type>Cylinder</Type>
+  <Origin>
+    <X>100</X>
+    <Y>100</Y>
+    <Z>100</Z>
+  </Origin>
+  <Color>
+    <R>255</R>
+    <G>255</G>
+    <B>255</B>
+  </Color>
+  <Direction>
+    <X>1</X>
+    <Y>0</Y>
+    <Z>0</Z>
+  </Direction>
+  <Radius>100</Radius>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<!--Object>
+  <Type>Light</Type>
+  <Origin>
+    <X>100</X>
+    <Y>100</Y>
+    <Z>100</Z>
+  </Origin>
+  <Color>
+    <R>255</R>
+    <G>255</G>
+    <B>255</B>
+  </Color>
+  <Direction>
+    <X>1</X>
+    <Y>0</Y>
+    <Z>0</Z>
+  </Direction>
+  <Radius>100</Radius>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object-->

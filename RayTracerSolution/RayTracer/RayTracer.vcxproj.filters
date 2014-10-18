@@ -38,6 +38,9 @@
     <ClInclude Include="Headers\System.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\tinyxml2.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main.cpp">
@@ -46,5 +49,13 @@
     <ClCompile Include="Sources\System.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\tinyxml2.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Ressources\Scene_01.xml">
+      <Filter>Fichiers de ressources</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

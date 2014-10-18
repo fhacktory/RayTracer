@@ -3,6 +3,7 @@
 #include <memory>
 #include <Windows.h>
 #include <SFML/Graphics.hpp>
+#include "../Headers/tinyxml2.h"
 
 class System
 {
@@ -19,6 +20,14 @@ class System
 	
 	private:
 		void	destroy();
+		
+		void	parseSphere(tinyxml2::XMLElement* childNode);
+		void	parsePlan(tinyxml2::XMLElement* childNode);
+		void	parseCylinder(tinyxml2::XMLElement* childNode);
+		void	parseLight(tinyxml2::XMLElement* childNode);
+		void	parseFile();
+		void	calculate();
+		void	draw();
 	protected:
 	public:
 		System();
@@ -28,7 +37,4 @@ class System
 	
 		bool	initialize();
 		void	run();
-
-		void	calculate();
-		void	draw();
 };

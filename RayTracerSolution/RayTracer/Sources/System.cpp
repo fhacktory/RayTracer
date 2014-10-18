@@ -41,6 +41,162 @@ System::operator=(const System&)
 **/
 
 void
+System::parseSphere(tinyxml2::XMLElement* childNode)
+{
+	int originX;
+	int originY;
+	int originZ;
+
+	int colorR;
+	int colorG;
+	int colorB;
+
+	int radius;
+
+	int refraction;
+	int reflection;
+
+	auto originNode = childNode->NextSiblingElement("Origin");
+	originNode->FirstChildElement("X")->QueryIntText(&originX);
+	originNode->FirstChildElement("Y")->QueryIntText(&originY);
+	originNode->FirstChildElement("Z")->QueryIntText(&originZ);
+
+	auto colorNode = childNode->NextSiblingElement("Color");
+	colorNode->FirstChildElement("R")->QueryIntText(&colorR);
+	colorNode->FirstChildElement("G")->QueryIntText(&colorG);
+	colorNode->FirstChildElement("B")->QueryIntText(&colorB);
+
+	auto radiusNode = childNode->NextSiblingElement("Radius");
+	radiusNode->QueryIntText(&radius);
+
+	auto refractionNode = childNode->NextSiblingElement("Refraction");
+	refractionNode->QueryIntText(&refraction);
+
+	auto reflectionNode = childNode->NextSiblingElement("Reflection");
+	reflectionNode->QueryIntText(&reflection);
+}
+
+void
+System::parsePlan(tinyxml2::XMLElement* childNode)
+{
+	int originX;
+	int originY;
+	int originZ;
+
+	int colorR;
+	int colorG;
+	int colorB;
+
+	int dirX;
+	int dirY;
+	int dirZ;
+
+	int refraction;
+	int reflection;
+
+	auto originNode = childNode->NextSiblingElement("Origin");
+	originNode->FirstChildElement("X")->QueryIntText(&originX);
+	originNode->FirstChildElement("Y")->QueryIntText(&originY);
+	originNode->FirstChildElement("Z")->QueryIntText(&originZ);
+
+	auto colorNode = childNode->NextSiblingElement("Color");
+	colorNode->FirstChildElement("R")->QueryIntText(&colorR);
+	colorNode->FirstChildElement("G")->QueryIntText(&colorG);
+	colorNode->FirstChildElement("B")->QueryIntText(&colorB);
+
+	auto dirNode = childNode->NextSiblingElement("Direction");
+	dirNode->FirstChildElement("X")->QueryIntText(&dirX);
+	dirNode->FirstChildElement("Y")->QueryIntText(&dirY);
+	dirNode->FirstChildElement("Z")->QueryIntText(&dirZ);
+
+	auto refractionNode = childNode->NextSiblingElement("Refraction");
+	refractionNode->QueryIntText(&refraction);
+
+	auto reflectionNode = childNode->NextSiblingElement("Reflection");
+	reflectionNode->QueryIntText(&reflection);
+}
+
+void
+System::parseCylinder(tinyxml2::XMLElement* childNode)
+{
+	int originX;
+	int originY;
+	int originZ;
+
+	int colorR;
+	int colorG;
+	int colorB;
+
+	int dirX;
+	int dirY;
+	int dirZ;
+
+	int radius;
+
+	int refraction;
+	int reflection;
+
+	auto originNode = childNode->NextSiblingElement("Origin");
+	originNode->FirstChildElement("X")->QueryIntText(&originX);
+	originNode->FirstChildElement("Y")->QueryIntText(&originY);
+	originNode->FirstChildElement("Z")->QueryIntText(&originZ);
+
+	auto colorNode = childNode->NextSiblingElement("Color");
+	colorNode->FirstChildElement("R")->QueryIntText(&colorR);
+	colorNode->FirstChildElement("G")->QueryIntText(&colorG);
+	colorNode->FirstChildElement("B")->QueryIntText(&colorB);
+
+	auto dirNode = childNode->NextSiblingElement("Direction");
+	dirNode->FirstChildElement("X")->QueryIntText(&dirX);
+	dirNode->FirstChildElement("Y")->QueryIntText(&dirY);
+	dirNode->FirstChildElement("Z")->QueryIntText(&dirZ);
+
+	auto radiusNode = childNode->NextSiblingElement("Radius");
+	radiusNode->QueryIntText(&radius);
+
+	auto refractionNode = childNode->NextSiblingElement("Refraction");
+	refractionNode->QueryIntText(&refraction);
+
+	auto reflectionNode = childNode->NextSiblingElement("Reflection");
+	reflectionNode->QueryIntText(&reflection);
+}
+
+void
+System::parseLight(tinyxml2::XMLElement* childNode)
+{
+
+}
+
+void
+System::parseFile()
+{
+	tinyxml2::XMLDocument xmlDoc;
+
+	xmlDoc.LoadFile("Ressources/Scene_01.xml");
+	auto objectNode = xmlDoc.FirstChildElement("Object");
+
+	while (objectNode != nullptr)
+	{
+		auto childNode = objectNode->FirstChildElement("Type");
+
+		std::string type(childNode->GetText());
+
+		if (type.compare("Sphere") == 0)
+			this->parseSphere(childNode);
+		else if (type.compare("Plan") == 0)
+			this->parsePlan(childNode);
+		else if (type.compare("Cylinder") == 0)
+			this->parseCylinder(childNode);
+		else if (type.compare("Light") == 0)
+			this->parseLight(childNode);
+		else
+			throw;
+
+		objectNode = objectNode->NextSiblingElement("Object");
+	}
+}
+
+void
 System::calculate()
 {
 	for (unsigned int height = 0u; height < 600; height++)
@@ -78,6 +234,7 @@ System::initialize()
 	unsigned int width = 800u;
 	unsigned int height = 600u;
 	
+	this->parseFile();
 	this->window.reset(new sf::RenderWindow(sf::VideoMode(width, height), "TheBestPlatformerInTheWorld"));
 	if (!this->window)
 		return false;

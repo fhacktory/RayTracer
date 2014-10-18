@@ -23,10 +23,18 @@
     <ClInclude Include="Headers\Plane.h" />
     <ClInclude Include="Headers\Sphere.h" />
     <ClInclude Include="Headers\System.h" />
+    <ClInclude Include="Headers\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\System.cpp" />
+    <ClCompile Include="Sources\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Ressources\Scene_01.xml">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Xml>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2E915B42-7955-4E4F-B651-D476801D88F1}</ProjectGuid>

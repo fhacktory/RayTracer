@@ -17,16 +17,20 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\Cylinder.h" />
     <ClInclude Include="Headers\Light.h" />
     <ClInclude Include="Headers\Object.h" />
     <ClInclude Include="Headers\Plane.h" />
+    <ClInclude Include="Headers\Ray.h" />
     <ClInclude Include="Headers\Sphere.h" />
     <ClInclude Include="Headers\System.h" />
     <ClInclude Include="Headers\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Camera.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\Ray.cpp" />
     <ClCompile Include="Sources\System.cpp" />
     <ClCompile Include="Sources\tinyxml2.cpp" />
   </ItemGroup>

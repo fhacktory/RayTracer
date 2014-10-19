@@ -22,6 +22,11 @@
     <ClInclude Include="Headers\Object.h" />
     <ClInclude Include="Headers\Plane.h" />
     <ClInclude Include="Headers\Sphere.h" />
+    <ClInclude Include="Headers\System.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\System.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2E915B42-7955-4E4F-B651-D476801D88F1}</ProjectGuid>

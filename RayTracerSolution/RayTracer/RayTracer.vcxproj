@@ -11,14 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Ressources\PixelShader.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\Cylinder.h" />
+    <ClInclude Include="Headers\Decoder.h" />
     <ClInclude Include="Headers\Light.h" />
     <ClInclude Include="Headers\Object.h" />
     <ClInclude Include="Headers\Plane.h" />
@@ -29,8 +24,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Camera.cpp" />
-    <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\Ray.cpp" />
+    <ClCompile Include="Sources\Cylinder.cpp" />
+    <ClCompile Include="Sources\Decoder.cpp" />
+    <ClCompile Include="Sources\Light.cpp" />
+    <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\Objects.cpp" />
+    <ClCompile Include="Sources\Plane.cpp" />
+    <ClCompile Include="Sources\Sphere.cpp" />
     <ClCompile Include="Sources\System.cpp" />
     <ClCompile Include="Sources\tinyxml2.cpp" />
   </ItemGroup>

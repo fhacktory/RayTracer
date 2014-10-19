@@ -1,23 +1,29 @@
 #pragma once
 
-class Object
+#include "../Headers/Object.h"
+
+class Sphere : public Object
 {
-	/*	VARIABLES	*/
+		/*	VARIABLES	*/
+	
+	private:
+		float	radius;
+	protected:
+	public:
+	
+		/*	FUNCTIONS	*/
+	
+	private:
+		void	destroy();
+	protected:
+	public:
+		Sphere();
+		~Sphere();
+		Sphere(const Sphere& right);
+		Sphere&	operator=(const Sphere& right);
+	
+		void	initialize(sf::Vector3f origine, sf::Color color, float	radius, float refraction, float reflection);
 
-private:
-protected:
-public:
-
-	/*	FUNCTIONS	*/
-
-private:
-	void	destroy();
-protected:
-public:
-	Object();
-	~Object();
-	Object(const Object& right);
-	Object	operator=(const Object& right);
-
-	bool	initialize();
+		void	intersection();
+		void	calculateColor();
 };

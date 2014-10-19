@@ -1,23 +1,28 @@
 #pragma once
 
-class Object
+#include "../Headers/Object.h"
+
+class Light : public Object
 {
-	/*	VARIABLES	*/
+		/*	VARIABLES	*/
+	
+	private:
+	protected:
+	public:
+	
+		/*	FUNCTIONS	*/
+	
+	private:
+		void	destroy();
+	protected:
+	public:
+		Light();
+		~Light();
+		Light(const Light& right);
+		Light&	operator=(const Light& right);
+	
+		void	initialize();
 
-private:
-protected:
-public:
-
-	/*	FUNCTIONS	*/
-
-private:
-	void	destroy();
-protected:
-public:
-	Object();
-	~Object();
-	Object(const Object& right);
-	Object	operator=(const Object& right);
-
-	bool	initialize();
+		void	intersection();
+		void	calculateColor();
 };

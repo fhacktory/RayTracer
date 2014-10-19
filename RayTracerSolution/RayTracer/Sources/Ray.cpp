@@ -39,7 +39,7 @@ Ray::operator=(const Ray&)
 void
 Ray::normalize(sf::Vector3f* vector)
 {
-	double	norm;
+	float	norm;
 
 	norm = sqrt(vector->x * vector->x + vector->y * vector->y + vector->z * vector->z);
 	vector->x = vector->x / norm;

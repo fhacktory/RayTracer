@@ -8,7 +8,8 @@ int CALLBACK WinMain(_In_  HINSTANCE hInstance, _In_  HINSTANCE hPrevInstance, _
 		return EXIT_FAILURE;
 	if (!system->initialize())
 		return EXIT_FAILURE;
-	system->run();
+	if (!system->run())
+		return EXIT_FAILURE;
 	system = nullptr;
 	return EXIT_SUCCESS;
 }

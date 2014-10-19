@@ -52,9 +52,10 @@ Plane::initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction,
 	Object::initialize(origine, color, refraction, reflection);
 }
 
-void
-Plane::intersection()
+sf::Color*
+Plane::intersection(Ray* ray)
 {
+	return nullptr;
 }
 
 void

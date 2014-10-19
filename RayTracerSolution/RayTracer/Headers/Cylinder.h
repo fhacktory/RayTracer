@@ -25,6 +25,6 @@ class Cylinder : public Object
 	
 		void	initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction, float radius, float refraction, float reflection);
 
-		void	intersection();
+		sf::Color*	intersection(Ray* ray);
 		void	calculateColor();
 };

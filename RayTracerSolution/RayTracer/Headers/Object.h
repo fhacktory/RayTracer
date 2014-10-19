@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include "../Headers/Ray.h"
 
 class Object
 {
@@ -37,6 +38,6 @@ class Object
 
 		virtual void	initialize(sf::Vector3f origine, sf::Color color, float refraction, float reflection);
 
-		virtual void	intersection() = 0;
+		virtual sf::Color*	intersection(Ray* ray) = 0;
 		virtual void	calculateColor() = 0;
 };

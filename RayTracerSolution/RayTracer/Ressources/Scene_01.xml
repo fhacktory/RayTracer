@@ -1,21 +1,21 @@
 <Object>
   <Type>Sphere</Type>
   <Origin>
-    <X>100</X>
-    <Y>100</Y>
-    <Z>100</Z>
+    <X>0</X>
+    <Y>0</Y>
+    <Z>60</Z>
   </Origin>
   <Color>
     <R>255</R>
-    <G>255</G>
-    <B>255</B>
+    <G>0</G>
+    <B>0</B>
   </Color>
-  <Radius>100</Radius>
+  <Radius>50</Radius>
   <Refraction>0</Refraction>
   <Reflection>0</Reflection>
 </Object>
 
-<Object>
+<!--Object>
   <Type>Plan</Type>
   <Origin>
     <X>100</X>
@@ -58,7 +58,7 @@
   <Reflection>0</Reflection>
 </Object>
 
-<!--Object>
+<Object>
   <Type>Light</Type>
   <Origin>
     <X>100</X>

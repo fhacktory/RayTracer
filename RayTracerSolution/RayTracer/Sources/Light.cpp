@@ -51,9 +51,10 @@ Light::initialize()
 	Object::initialize(origine, color, refraction, reflection);
 }
 
-void
-Light::intersection()
+sf::Color*
+Light::intersection(Ray* ray)
 {
+	return nullptr;
 }
 
 void

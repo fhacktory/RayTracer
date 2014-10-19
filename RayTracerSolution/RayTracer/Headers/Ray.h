@@ -27,4 +27,7 @@ public:
 	Ray&	operator=(const Ray& right);
 
 	bool	initialize(unsigned int pixelX, unsigned int pixelY, Camera* camera);
+
+	sf::Vector3f*	getOrigin();
+	sf::Vector3f*	getDirection();
 };

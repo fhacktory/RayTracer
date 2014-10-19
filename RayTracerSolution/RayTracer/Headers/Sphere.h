@@ -24,6 +24,6 @@ class Sphere : public Object
 	
 		void	initialize(sf::Vector3f origine, sf::Color color, float	radius, float refraction, float reflection);
 
-		void	intersection();
+		sf::Color*	intersection(Ray* ray);
 		void	calculateColor();
 };

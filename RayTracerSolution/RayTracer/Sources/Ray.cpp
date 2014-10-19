@@ -73,3 +73,15 @@ Ray::initialize(unsigned int pixelX, unsigned int pixelY, Camera* camera)
 
 	return true;
 }
+
+sf::Vector3f*
+Ray::getOrigin()
+{
+	return &this->origin;
+}
+
+sf::Vector3f*
+Ray::getDirection()
+{
+	return &this->direction;
+}

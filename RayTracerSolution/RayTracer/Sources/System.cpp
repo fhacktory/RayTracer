@@ -9,6 +9,7 @@
 **/
 
 System::System() :
+camera(nullptr),
 window(nullptr),
 renderer(nullptr)
 {
@@ -26,6 +27,7 @@ System::~System()
 void
 System::destroy()
 {
+	this->camera = nullptr;
 	this->window = nullptr;
 	this->renderer = nullptr;
 }
@@ -56,6 +58,19 @@ System::manageEvents()
 	}
 }
 
+sf::Color*
+System::seekIntersection(std::vector<Object*>* objectList, Ray* ray)
+{
+	sf::Color* ret = new sf::Color(0, 0, 0);
+
+	for (int i = 0; i < objectList->size(); ++i)
+	{
+		ret = (*objectList)[i]->intersection(ray);
+	}
+
+	return ret;
+}
+
 bool
 System::compute()
 {
@@ -69,7 +84,13 @@ System::compute()
 	for (unsigned int height = 0u; height < 600; height++)
 	{
 		for (unsigned int width = 0u; width < 800; width++)
-			this->renderer->setPixel(width, height, sf::Color((UINT8)width, (UINT8)height, (UINT8)width + (UINT8)height));
+		{
+			std::unique_ptr<Ray> ray(new Ray);
+
+			ray->initialize(width, height, this->camera.get());
+			sf::Color* pixelColor = this->seekIntersection(objectsList, ray.get());
+			this->renderer->setPixel(width, height, *pixelColor);
+		}
 	}
 	return true;
 }
@@ -102,6 +123,10 @@ System::initialize()
 	unsigned int width = 800u;
 	unsigned int height = 600u;
 	
+	this->camera.reset(new Camera);
+	if (!this->camera)
+		return false;
+	this->camera->initialize(width, height);
 	this->window.reset(new sf::RenderWindow(sf::VideoMode(width, height), "TheBestPlatformerInTheWorld"));
 	if (!this->window)
 		return false;

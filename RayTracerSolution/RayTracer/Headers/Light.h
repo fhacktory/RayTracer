@@ -23,6 +23,6 @@ class Light : public Object
 	
 		void	initialize();
 
-		void	intersection();
+		sf::Color*	intersection(Ray* ray);
 		void	calculateColor();
 };

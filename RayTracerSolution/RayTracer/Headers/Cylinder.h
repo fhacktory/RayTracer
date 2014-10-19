@@ -2,7 +2,7 @@
 
 #include "../Headers/Object.h"
 
-class Cylinder : Object
+class Cylinder : public Object
 {
 		/*	VARIABLES	*/
 	

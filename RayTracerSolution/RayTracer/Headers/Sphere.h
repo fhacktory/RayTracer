@@ -2,7 +2,7 @@
 
 #include "../Headers/Object.h"
 
-class Sphere : Object
+class Sphere : public Object
 {
 		/*	VARIABLES	*/
 	

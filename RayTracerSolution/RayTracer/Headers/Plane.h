@@ -2,7 +2,7 @@
 
 #include "../Headers/Object.h"
 
-class Plane : Object
+class Plane : public Object
 {
 	/*	VARIABLES	*/
 

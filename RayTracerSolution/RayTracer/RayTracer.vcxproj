@@ -11,12 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Ressources\PixelShader.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Headers\Cylinder.h" />
     <ClInclude Include="Headers\Decoder.h" />
     <ClInclude Include="Headers\Light.h" />
@@ -29,6 +23,7 @@
   <ItemGroup>
     <ClCompile Include="Sources\Cylinder.cpp" />
     <ClCompile Include="Sources\Decoder.cpp" />
+    <ClCompile Include="Sources\Light.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\Objects.cpp" />
     <ClCompile Include="Sources\Plane.cpp" />

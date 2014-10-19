@@ -1,10 +1,13 @@
 #pragma once
 
-class Object
+#include "../Headers/Object.h"
+
+class Plane : Object
 {
 	/*	VARIABLES	*/
 
 private:
+	sf::Vector3f	direction;
 protected:
 public:
 
@@ -14,10 +17,13 @@ private:
 	void	destroy();
 protected:
 public:
-	Object();
-	~Object();
-	Object(const Object& right);
-	Object	operator=(const Object& right);
+	Plane();
+	~Plane();
+	Plane(const Plane& right);
+	Plane&	operator=(const Plane& right);
 
-	bool	initialize();
+	void	initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction, float refraction, float reflection);
+
+	void	intersection();
+	void	calculateColor();
 };

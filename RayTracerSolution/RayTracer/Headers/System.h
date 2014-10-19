@@ -26,6 +26,7 @@ class System
 		void	parseCylinder(tinyxml2::XMLElement* childNode);
 		void	parseLight(tinyxml2::XMLElement* childNode);
 		void	parseFile();
+		void	manageEvents();
 		void	calculate();
 		void	draw();
 	protected:

@@ -1,23 +1,30 @@
 #pragma once
 
-class Object
+#include "../Headers/Object.h"
+
+class Cylinder : Object
 {
-	/*	VARIABLES	*/
+		/*	VARIABLES	*/
+	
+	private:
+		float			radius;
+		sf::Vector3f	direction;
+	protected:
+	public:
+	
+		/*	FUNCTIONS	*/
+	
+	private:
+		void	destroy();
+	protected:
+	public:
+		Cylinder();
+		~Cylinder();
+		Cylinder(const Cylinder& right);
+		Cylinder&	operator=(const Cylinder& right);
+	
+		void	initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction, float radius, float refraction, float reflection);
 
-private:
-protected:
-public:
-
-	/*	FUNCTIONS	*/
-
-private:
-	void	destroy();
-protected:
-public:
-	Object();
-	~Object();
-	Object(const Object& right);
-	Object	operator=(const Object& right);
-
-	bool	initialize();
+		void	intersection();
+		void	calculateColor();
 };

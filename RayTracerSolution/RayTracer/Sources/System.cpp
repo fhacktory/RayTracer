@@ -197,6 +197,18 @@ System::parseFile()
 }
 
 void
+System::manageEvents()
+{
+	sf::Event	event;
+
+	while (this->window->pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
+			this->running = false;
+	}
+}
+
+void
 System::calculate()
 {
 	for (unsigned int height = 0u; height < 600; height++)
@@ -252,7 +264,7 @@ System::run()
 	this->calculate();
 	this->draw();
 	while (this->running)
-		;
+		this->manageEvents();
 	if (this->window->isOpen())
 		this->window->close();
 }

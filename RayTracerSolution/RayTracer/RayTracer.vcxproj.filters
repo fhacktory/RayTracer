@@ -38,7 +38,11 @@
     <ClInclude Include="Headers\System.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Headers\tinyxml2.h">
+=======
+    <ClInclude Include="Headers\Decoder.h">
+>>>>>>> Objects in Progress
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -49,6 +53,7 @@
     <ClCompile Include="Sources\System.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Sources\tinyxml2.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -57,5 +62,22 @@
     <Xml Include="Ressources\Scene_01.xml">
       <Filter>Fichiers de ressources</Filter>
     </Xml>
+=======
+    <ClCompile Include="Sources\Decoder.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Objects.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Sphere.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Plane.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Cylinder.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+>>>>>>> Objects in Progress
   </ItemGroup>
 </Project>

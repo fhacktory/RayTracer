@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Cylinder.h" />
+    <ClInclude Include="Headers\Decoder.h" />
     <ClInclude Include="Headers\Light.h" />
     <ClInclude Include="Headers\Object.h" />
     <ClInclude Include="Headers\Plane.h" />
@@ -26,7 +27,12 @@
     <ClInclude Include="Headers\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Cylinder.cpp" />
+    <ClCompile Include="Sources\Decoder.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\Objects.cpp" />
+    <ClCompile Include="Sources\Plane.cpp" />
+    <ClCompile Include="Sources\Sphere.cpp" />
     <ClCompile Include="Sources\System.cpp" />
     <ClCompile Include="Sources\tinyxml2.cpp" />
   </ItemGroup>

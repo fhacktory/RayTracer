@@ -52,10 +52,30 @@ Plane::initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction,
 	Object::initialize(origine, color, refraction, reflection);
 }
 
-sf::Color*
+double
 Plane::intersection(Ray* ray)
 {
-	return nullptr;
+	double	det;
+	double	X;
+	double	Y;
+	double	Z;
+	double	D;
+
+	auto rayDirection = ray->getDirection();
+	auto rayOrigin = ray->getOrigin();
+
+	X = rayOrigin->x - this->origine.x;
+	Y = rayOrigin->y - this->origine.y;
+	Z = rayOrigin->z - this->origine.z;
+	D = -(this->origine.x * this->direction.x + this->origine.y * this->direction.y +
+		this->origine.z * this->direction.z);
+
+	det = -((this->direction.x * X + this->direction.y * Y + this->direction.z * Z + D) /
+		(this->direction.x * rayDirection->x + this->direction.y * rayDirection->y +
+		this->direction.z * rayDirection->z));
+	if (det < 0.0)
+		return 0.0f;
+	return det;
 }
 
 void

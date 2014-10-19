@@ -62,17 +62,23 @@ sf::Color*
 System::seekIntersection(std::vector<Object*>* objectList, Ray* ray)
 {
 	sf::Color* ret = new sf::Color(0, 0, 0);
+	double min = 0.0f;
 
 	for (int i = 0; i < objectList->size(); ++i)
 	{
-		ret = (*objectList)[i]->intersection(ray);
+		double det = (*objectList)[i]->intersection(ray);
+		if (det > 0.0f && (!min || min > det))
+		{
+			min = det;
+			ret = (*objectList)[i]->getColor();
+		}
 	}
 
 	return ret;
 }
 
 bool
-System::compute()
+System::compute(unsigned int width, unsigned int height)
 {
 	Decoder	decoder;
 	std::vector<Object*>*	objectsList;
@@ -81,15 +87,15 @@ System::compute()
 	if (!objectsList)
 		return false;
 	//raycast
-	for (unsigned int height = 0u; height < 600; height++)
+	for (unsigned int x = 0u; x < width; x++)
 	{
-		for (unsigned int width = 0u; width < 800; width++)
+		for (unsigned int y = 0u; y < height; y++)
 		{
 			std::unique_ptr<Ray> ray(new Ray);
 
-			ray->initialize(width, height, this->camera.get());
+			ray->initialize(x, y, this->camera.get());
 			sf::Color* pixelColor = this->seekIntersection(objectsList, ray.get());
-			this->renderer->setPixel(width, height, *pixelColor);
+			this->renderer->setPixel(x, y, *pixelColor);
 		}
 	}
 	return true;
@@ -120,14 +126,14 @@ System::draw()
 bool
 System::initialize()
 {
-	unsigned int width = 800u;
-	unsigned int height = 600u;
+	unsigned int width = 1280u;
+	unsigned int height = 720u;
 	
 	this->camera.reset(new Camera);
 	if (!this->camera)
 		return false;
 	this->camera->initialize(width, height);
-	this->window.reset(new sf::RenderWindow(sf::VideoMode(width, height), "TheBestPlatformerInTheWorld"));
+	this->window.reset(new sf::RenderWindow(sf::VideoMode(width, height), "fHACKtory 2014 - RayTracer"));
 	if (!this->window)
 		return false;
 	this->renderer.reset(new sf::Image);
@@ -141,7 +147,7 @@ System::initialize()
 bool
 System::run()
 {
-	if (!this->compute())
+	if (!this->compute(this->camera->getViewportWidth(), this->camera->getViewportHeight()))
 		return false;
 	this->draw();
 	while (this->running)

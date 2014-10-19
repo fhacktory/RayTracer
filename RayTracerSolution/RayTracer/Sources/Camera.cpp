@@ -59,7 +59,7 @@ Camera::initialize(unsigned int width, unsigned int height)
 	this->direction.z = 1;
 
 	this->fovX = 0.75f;
-	this->fovY = (width / height) * this->fovX;
+	this->fovY = ((float)width / (float)height) * this->fovX;
 
 	return true;
 }

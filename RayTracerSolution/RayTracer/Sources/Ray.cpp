@@ -65,11 +65,11 @@ Ray::initialize(unsigned int pixelX, unsigned int pixelY, Camera* camera)
 	this->origin.y = cameraOrigin->y;
 	this->origin.z = cameraOrigin->z;
 
-	this->direction.x = ((2 * pixelX - camera->getViewportWidth()) * tan(camera->getFovX()));
-	this->direction.y = ((2 * pixelY - camera->getViewportHeight()) * tan(camera->getFovY()));
-	this->direction.z = cameraDirection->z;
+	this->direction.x = 2.0f * (float)pixelX - (float)camera->getViewportWidth();
+	this->direction.y = 2.0f * (float)pixelY - (float)camera->getViewportHeight();
+	this->direction.z = 100;
 
-	this->normalize(&this->direction);
+	//this->normalize(&this->direction);
 
 	return true;
 }

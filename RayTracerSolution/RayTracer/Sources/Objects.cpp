@@ -46,6 +46,25 @@ Object::operator=(const Object&)
 * Object >> PUBLIC FUNCTIONS
 **/
 
+double
+Object::min(double x, double y)
+{
+	if (x < y)
+	{
+		if (x > 0.001)
+			return (x);
+		else if (y > 0.001)
+			return (y);
+		else
+			return (0.0);
+	}
+	if (y > 0.001)
+		return (y);
+	else if (x > 0.001)
+		return (x);
+	return(0.0);
+}
+
 void
 Object::initialize(sf::Vector3f origine, sf::Color color, float refraction, float reflection)
 {
@@ -53,4 +72,10 @@ Object::initialize(sf::Vector3f origine, sf::Color color, float refraction, floa
 	this->origine = origine;
 	this->refraction = refraction;
 	this->reflection = reflection;
+}
+
+sf::Color*
+Object::getColor()
+{
+	return &this->color;
 }

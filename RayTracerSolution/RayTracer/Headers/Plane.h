@@ -24,6 +24,6 @@ public:
 
 	void	initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f direction, float refraction, float reflection);
 
-	sf::Color*	intersection(Ray* ray);
+	double	intersection(Ray* ray);
 	void	calculateColor();
 };

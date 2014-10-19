@@ -52,7 +52,7 @@ Sphere::initialize(sf::Vector3f origine, sf::Color color, float radius, float re
 	Object::initialize(origine, color, refraction, reflection);
 }
 
-sf::Color*
+double
 Sphere::intersection(Ray* ray)
 {
 	double	a;
@@ -68,6 +68,10 @@ Sphere::intersection(Ray* ray)
 	b = 2 * (rayDirection->x * (rayOrigin->x - this->origine.x) +
 		rayDirection->y * (rayOrigin->y - this->origine.y) +
 		rayDirection->z * (rayOrigin->z - this->origine.z));
+	/*c = (rayOrigin->x - this->origine.x) * (rayOrigin->x - this->origine.x) +
+		(rayOrigin->y - this->origine.y) * (rayOrigin->y - this->origine.y) +
+		(rayOrigin->z - this->origine.z) * (rayOrigin->z - this->origine.z) -
+		this->radius * this->radius;*/
 	c = this->origine.x * this->origine.x + this->origine.y * this->origine.y +
 		this->origine.z * this->origine.z +
 		rayOrigin->x * rayOrigin->x + rayOrigin->y * rayOrigin->y + rayOrigin->z * rayOrigin->z -
@@ -76,8 +80,8 @@ Sphere::intersection(Ray* ray)
 		this->radius * this->radius;
 	det = b * b - (4 * a * c);
 	if (det < 0)
-		return new sf::Color(0, 0, 0);
-	return &this->color;
+		return 0.0f;
+	return (this->min((-b + sqrt(det)) / (2 * a), (-b - sqrt(det)) / (2 * a)));
 }
 
 void	

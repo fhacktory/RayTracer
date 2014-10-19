@@ -3,28 +3,28 @@
   <Origin>
     <X>0</X>
     <Y>0</Y>
-    <Z>60</Z>
+    <Z>200</Z>
   </Origin>
   <Color>
     <R>255</R>
     <G>0</G>
     <B>0</B>
   </Color>
-  <Radius>50</Radius>
+  <Radius>150</Radius>
   <Refraction>0</Refraction>
   <Reflection>0</Reflection>
 </Object>
 
-<!--Object>
+<Object>
   <Type>Plan</Type>
   <Origin>
-    <X>100</X>
-    <Y>100</Y>
-    <Z>100</Z>
+    <X>-1000</X>
+    <Y>0</Y>
+    <Z>0</Z>
   </Origin>
   <Color>
-    <R>255</R>
-    <G>255</G>
+    <R>0</R>
+    <G>0</G>
     <B>255</B>
   </Color>
   <Direction>
@@ -37,6 +37,90 @@
 </Object>
 
 <Object>
+  <Type>Plan</Type>
+  <Origin>
+    <X></X>
+    <Y>0</Y>
+    <Z>300</Z>
+  </Origin>
+  <Color>
+    <R>0</R>
+    <G>255</G>
+    <B>0</B>
+  </Color>
+  <Direction>
+    <X>0</X>
+    <Y>0</Y>
+    <Z>1</Z>
+  </Direction>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<Object>
+  <Type>Plan</Type>
+  <Origin>
+    <X>1000</X>
+    <Y>0</Y>
+    <Z>0</Z>
+  </Origin>
+  <Color>
+    <R>0</R>
+    <G>120</G>
+    <B>160</B>
+  </Color>
+  <Direction>
+    <X>1</X>
+    <Y>0</Y>
+    <Z>0</Z>
+  </Direction>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<Object>
+  <Type>Plan</Type>
+  <Origin>
+    <X>0</X>
+    <Y>500</Y>
+    <Z>0</Z>
+  </Origin>
+  <Color>
+    <R>185</R>
+    <G>120</G>
+    <B>160</B>
+  </Color>
+  <Direction>
+    <X>0</X>
+    <Y>1</Y>
+    <Z>0</Z>
+  </Direction>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<Object>
+  <Type>Plan</Type>
+  <Origin>
+    <X>0</X>
+    <Y>-1000</Y>
+    <Z>0</Z>
+  </Origin>
+  <Color>
+    <R>185</R>
+    <G>80</G>
+    <B>168</B>
+  </Color>
+  <Direction>
+    <X>0</X>
+    <Y>1</Y>
+    <Z>0</Z>
+  </Direction>
+  <Refraction>0</Refraction>
+  <Reflection>0</Reflection>
+</Object>
+
+<!--Object>
   <Type>Cylinder</Type>
   <Origin>
     <X>100</X>

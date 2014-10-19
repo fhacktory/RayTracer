@@ -38,6 +38,8 @@ class Object
 
 		virtual void	initialize(sf::Vector3f origine, sf::Color color, float refraction, float reflection);
 
-		virtual sf::Color*	intersection(Ray* ray) = 0;
+		double min(double x, double y);
+		sf::Color* getColor();
+		virtual double intersection(Ray* ray) = 0;
 		virtual void	calculateColor() = 0;
 };

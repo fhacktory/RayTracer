@@ -25,7 +25,7 @@ class System
 		
 		sf::Color*	seekIntersection(std::vector<Object*>* objectList, Ray* ray);
 		void	manageEvents();
-		bool	compute();
+		bool	compute(unsigned int width, unsigned int height);
 		void	draw();
 	protected:
 	public:

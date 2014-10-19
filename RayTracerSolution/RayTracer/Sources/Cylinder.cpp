@@ -53,10 +53,10 @@ Cylinder::initialize(sf::Vector3f origine, sf::Color color, sf::Vector3f directi
 	Object::initialize(origine, color, refraction, reflection);
 }
 
-sf::Color*
+double
 Cylinder::intersection(Ray* ray)
 {
-	return nullptr;
+	return 0.0f;
 }
 
 void

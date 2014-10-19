@@ -64,7 +64,7 @@ System::seekIntersection(std::vector<Object*>* objectList, Ray* ray)
 	sf::Color* ret = new sf::Color(0, 0, 0);
 	double min = 0.0f;
 
-	for (int i = 0; i < objectList->size(); ++i)
+	for (unsigned int i = 0u; i < objectList->size(); ++i)
 	{
 		double det = (*objectList)[i]->intersection(ray);
 		if (det > 0.0f && (!min || min > det))

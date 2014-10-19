@@ -47,7 +47,7 @@ Object::operator=(const Object&)
 **/
 
 double
-Object::min(double x, double y)
+Object::retMin(double x, double y)
 {
 	if (x < y)
 	{

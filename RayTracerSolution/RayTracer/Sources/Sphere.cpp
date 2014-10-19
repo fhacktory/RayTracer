@@ -81,7 +81,7 @@ Sphere::intersection(Ray* ray)
 	det = b * b - (4 * a * c);
 	if (det < 0)
 		return 0.0f;
-	return (this->min((-b + sqrt(det)) / (2 * a), (-b - sqrt(det)) / (2 * a)));
+	return (this->retMin((-b + sqrt(det)) / (2 * a), (-b - sqrt(det)) / (2 * a)));
 }
 
 void	
